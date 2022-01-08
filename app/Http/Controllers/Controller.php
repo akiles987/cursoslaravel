@@ -1,6 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
+use App\Http\Controllers\ProfesoreController;
+
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -10,4 +15,7 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+
+
 }

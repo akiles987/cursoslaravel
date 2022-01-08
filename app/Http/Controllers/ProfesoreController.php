@@ -4,14 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Profesore;
 use Illuminate\Http\Request;
+use PDF;
 
 class ProfesoreController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $profesores = Profesore::all();
@@ -19,69 +16,76 @@ class ProfesoreController extends Controller
         return view('profesores.index', compact('profesores'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        //mostrar el formulario de creación
+        return view('profesores.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'codigo' => 'required|min:3|max:15',
+            'empresa' => 'required|min:10|max:50',
+            'contacto' => 'required',
+        ]);
+
+        Profesore::create($request->all());
+
+        /*
+        almacenar el nuevo profesore
+        $profesore = new Profesore();
+        $profesore->codigo = $request->codigo;
+        $profesore->empresa = $request->empresa;
+        $profesore->contacto = $request->contacto;
+        $profesore->direccion = $request->direccion;
+        $profesore->ciudad = $request->ciudad;
+        $profesore->save();
+        */
+
+        return redirect()->route('profesores.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Profesore  $profesore
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Profesore $profesore)
+    public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Profesore  $profesore
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Profesore $profesore)
+    public function edit($id)
     {
-        //
+        $profesore = Profesore::find($id);
+        return view('profesores.edit', compact('profesore'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Profesore  $profesore
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Profesore $profesore)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'codigo' => 'required|min:3|max:15',
+            'empresa' => 'required|min:10|max:50',
+            'contacto' => 'required',
+        ]);
+
+        $profesore = Profesore::find($id);
+        $profesore->update($request->all());
+
+        return redirect()->route('profesores.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Profesore  $profesore
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Profesore $profesore)
+    public function destroy($id)
     {
-        //
+        Profesore::find($id)->delete();
+        // return redirect('/profesores'); //estas dos instrucciones hacen lo mismo
+        return redirect()->route('profesores.index');
     }
+
+    public function imprimir(){
+
+        $profesores = Profesore::all();
+        $data = compact('profesores');
+        $pdf = \PDF::loadView('pdf.profesores', $data);
+        return $pdf->download('primerpdf.pdf');
+    }
+
+
 }

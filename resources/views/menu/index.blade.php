@@ -1,4 +1,4 @@
-@extends("layouts.app2")
+@extends("layouts.app")
 
 @section("contenido")
     <style>
@@ -21,6 +21,4 @@
         <a href=" {{url('/profesores')}}" class="btn btn-info">Listado de profesores</a>
         <a href=" {{url('/cursos')}}" class="btn btn-info">Lista de cursos</a>
         <a href=" {{url('/alumnos')}}" class="btn btn-info">Lista de alumnos</a>
-        <a href=" {{url('/profesores/create')}}" class="btn btn-info">Nuevo profesore</a>
-        <a href=" {{url('/profesores/create')}}" class="btn btn-info">Nuevo profesore</a>
 @endsection

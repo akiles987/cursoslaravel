@@ -11,12 +11,31 @@
         }
     </style>
 
+<script>
+    $(document).ready(function() {
+        $(".btn_borrar").click(function(){
+            const id=$(this).closest("tr").data("id");
+            $.ajax({
+                url: "{{url('profesores')}}/"+id,
+                method: "POST",
+                data: {
+                    "_method" : "DELETE",
+                    "_token" : "{{csrf_token()}}"
+                },
+                success: function(response){
+                    $("tr[data-id='"+id+"']").fadeOut();
+                }
+            });
+        })
+    } );
+</script>
 
 </head>
 <body>
     <h1>Profesores</h1>
 
-
+    <a href=" {{url('/imprimir')}}" class="btn btn-primary">Imprimir PDF</a>
+    <a href=" {{url('/profesores/create')}}" class="btn btn-primary">Nuevo Profesor</a>
 
         <a href=" {{url('/')}}" class="btn btn-primary">←</a>
         <table id="tabla" class="table table-striped table-bordered">

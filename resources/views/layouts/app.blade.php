@@ -51,9 +51,6 @@
 
 </head>
 <body>
-    <div id="menu">
-        @include('layouts.menu')
-    </div>
     <div id="principal">
 
         @yield('contenido')

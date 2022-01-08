@@ -5,8 +5,8 @@ use App\Http\Controllers\ProfesoreController;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\MatriculaController;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\TestMail;
+use App\Http\Controllers\Controller;
+use App\Mail\correobuenosdias;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +23,22 @@ Route::get('/', function () {
     return view('menu.index');
 });
 
+
+
 Route::get('/mail', function () {
 
-    Mail::to("akiles725@gmail.com")->send(new TestMail("Hololiwis"));
+    Mail::to("akiles725@gmail.com")->send(new correobuenosdias("hola"));
 
+    
     return view('menu.index');
 });
+
+Route::get('/imprimir', 'App\Http\Controllers\ProfesoreController@imprimir')->name('pdf.pdf');
+
 
 Route::resource('/profesores', ProfesoreController::class);
 Route::resource('/alumnos', AlumnoController::class);
 Route::resource('/cursos', CursoController::class);
 Route::resource('/matriculas', MatriculaController::class);
+
 
