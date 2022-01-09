@@ -13,23 +13,33 @@
 
 <script>
     $(document).ready(function() {
-        $(".btn_borrar").click(function(){
-            const id=$(this).closest("tr").data("id");
-            $.ajax({
-                url: "{{url('profesores')}}/"+id,
-                method: "POST",
-                data: {
-                    "_method" : "DELETE",
-                    "_token" : "{{csrf_token()}}"
-                },
-                success: function(response){
-                    $("tr[data-id='"+id+"']").fadeOut();
-                }
+        $(".borrar").click(function(){
+                    const tr=$(this).closest("tr"); //guardamos el tr completo
+                    const id=tr.data("id");
+                    Swal.fire({
+                        title: '¿Seguro que desea borrarlo?',
+                        showCancelButton: true,
+                        confirmButtonText: 'Borrar',
+                        cancelButtonText: `Cancelar`,
+                    }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                method: "POST",
+                                url   : "{{url('/profesores')}}/"+id,
+                                data  : {
+                                    _token: "{{csrf_token()}}",
+                                    _method: "delete",
+                                },
+                                success: function(){
+                                    tr.fadeOut();
+                                }
+                            });
+                        } 
+                    })
+                });
             });
-        })
-    } );
-</script>
-
+        </script>
 </head>
 <body>
     <h1>Profesores</h1>
@@ -49,8 +59,8 @@
                     <th>telefono</th>
                     <th>dni</th>
                     <th>curso</th>
-                    <th></th>
-                    <th></th>
+                    <th>Borrar</th>
+                    <th>Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -64,16 +74,7 @@
                         <td>{{$profesore->telefono}}</td>
                         <td>{{$profesore->dni}}</td>
                         <td>{{$profesore->curso}}</td>
-         {{--              <td><a class="btn_borrar" href="#"><img width="32px" src="https://www.pngrepo.com/png/190063/512/trash.png"></a></td>
---}}
-                        <td><form method="POST" action="{{url('/profesores')}}/{{$profesore->id}}">
-                                @csrf
-                                @method("delete")
-                                <input  type="image" width="32px" src="https://www.pngrepo.com/png/190063/512/trash.png">
-                        </form>
-
-
-
+                        <td><a href="#" class='btn btn-danger borrar'><input  type="image" width="32px" src="https://www.pngrepo.com/png/190063/512/trash.png"></a></td>
                         <td><a href="{{url('/profesores')}}/{{$profesore->id}}/edit"><img width="32px" src="https://img.icons8.com/cotton/2x/000000/edit.png"></a></td>
 
                     </tr>

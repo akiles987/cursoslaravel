@@ -21,11 +21,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
      <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key={{env('BING_MAP_API_KEY')}}' defer></script>
 
-     <script>
+    <script>
     $(document).ready(function() {
-       $('#tabla').DataTable();
-    } );
-</script>
+       $('#tabla').DataTable({
+        "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                }});});
+    </script>
+
 
     <style>
         body {

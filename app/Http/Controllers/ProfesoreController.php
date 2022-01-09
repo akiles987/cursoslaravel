@@ -26,23 +26,16 @@ class ProfesoreController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'codigo' => 'required|min:3|max:15',
-            'empresa' => 'required|min:10|max:50',
-            'contacto' => 'required',
+            'nombre' => 'required',
+            'apellidos' => 'required',
+            'email' => 'required',
+            'f_nacimiento' => 'required|date',
+            'telefono' => 'required',
+            'dni' => 'required',
+            'curso' => 'required',
         ]);
 
         Profesore::create($request->all());
-
-        /*
-        almacenar el nuevo profesore
-        $profesore = new Profesore();
-        $profesore->codigo = $request->codigo;
-        $profesore->empresa = $request->empresa;
-        $profesore->contacto = $request->contacto;
-        $profesore->direccion = $request->direccion;
-        $profesore->ciudad = $request->ciudad;
-        $profesore->save();
-        */
 
         return redirect()->route('profesores.index');
     }
@@ -61,12 +54,13 @@ class ProfesoreController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'codigo' => 'required|min:3|max:15',
-            'empresa' => 'required|min:10|max:50',
-            'contacto' => 'required',
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'dni' => 'required',
         ]);
 
         $profesore = Profesore::find($id);
+        
         $profesore->update($request->all());
 
         return redirect()->route('profesores.index');
