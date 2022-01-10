@@ -55,7 +55,7 @@ class ProfesoreController extends Controller
     {
         $validated = $request->validate([
             'nombre' => 'required',
-            'apellido' => 'required',
+            'apellidos' => 'required',
             'dni' => 'required',
         ]);
 

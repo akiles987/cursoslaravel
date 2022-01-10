@@ -2,6 +2,15 @@
 
 
 @section("contenido")
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <h3>Editar profesore </h3>
     <form action="{{url('/profesores/')}}/{{$profesore->id}}" method="post">
         @csrf

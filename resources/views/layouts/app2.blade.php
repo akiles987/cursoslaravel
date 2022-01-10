@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
      <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key={{env('BING_MAP_API_KEY')}}' defer></script>
 
+
     <script>
     $(document).ready(function() {
        $('#tabla').DataTable({
@@ -50,7 +51,7 @@
             background-color: white;
         }
     </style>
-
+@livewireStyles
 
 </head>
 <body>
@@ -61,5 +62,6 @@
 
         @yield('contenido')
     </div>
+    @livewireScripts
 </body>
 </html>

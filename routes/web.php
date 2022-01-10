@@ -6,18 +6,8 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\MatriculaController;
 use App\Http\Controllers\Controller;
-use App\Mail\correobuenosdias;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\ContactoController;
 
 Route::get('/', function () {
     return view('menu.index');
@@ -25,20 +15,13 @@ Route::get('/', function () {
 
 
 
-Route::get('/mail', function () {
-
-    Mail::to("akiles725@gmail.com")->send(new correobuenosdias("hola"));
-
-    
-    return view('menu.index');
-});
+Route::get('contacto', [ContactoController::class, 'index'])->name('contacto.index');
+Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.store');
 
 Route::get('/imprimir', 'App\Http\Controllers\ProfesoreController@imprimir')->name('pdf.pdf');
 
-
+Route::get('enviar', [PDFController::class, 'index']);
 Route::resource('/profesores', ProfesoreController::class);
 Route::resource('/alumnos', AlumnoController::class);
 Route::resource('/cursos', CursoController::class);
 Route::resource('/matriculas', MatriculaController::class);
-
-

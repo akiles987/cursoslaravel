@@ -2,11 +2,18 @@
 
 
 @section("contenido")
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <h3>Insertar Profesor </h3>
-
-
-
-
     <form action="{{route('profesores.store')}}" method="post">
         @csrf
         <div class="form-group">
@@ -37,10 +44,10 @@
             <label for="telefono">Curso</label>
             <input type="text" class="form-control" id="curso" name="curso" placeholder="curso">
         </div>
+        
 
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a href="{{url('/profesores')}}" class="btn btn-secondary">Volver</a>
     </form>
-
 
 @endsection

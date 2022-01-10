@@ -11,16 +11,18 @@ class correobuenosdias extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $correo;
+    public $subject = "Testeo de laravel";
+    public $contacto;
 
-    public function __construct(Correo $correo)
+    public function __construct($contacto)
     {
-        $this->correo = $correo;
+        $this->contacto = $contacto;
     }
 
 
     public function build()
     {
-        return $this->view('pruebas.index');
+        
+        return $this->view('menu.datoscontacto');
     }
 }
