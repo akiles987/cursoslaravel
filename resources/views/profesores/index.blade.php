@@ -46,8 +46,6 @@
 
     <a href=" {{url('/imprimir')}}" class="btn btn-primary">Descargar Tabla en PDF</a>
     <a href=" {{url('/profesores/create')}}" class="btn btn-primary">Nuevo Profesor</a>
-
-        <a href=" {{url('/')}}" class="btn btn-primary">Enviar PDF por correo</a>
         <table id="tabla" class="table table-striped table-bordered">
             <thead>
                 <tr>

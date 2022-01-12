@@ -19,6 +19,9 @@ Route::get('contacto', [ContactoController::class, 'index'])->name('contacto.ind
 Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.store');
 
 Route::get('/imprimir', 'App\Http\Controllers\ProfesoreController@imprimir')->name('pdf.pdf');
+Route::get('/imprimiralumno', 'App\Http\Controllers\AlumnoController@imprimir')->name('pdf.pdf');
+
+
 
 Route::get('enviar', [PDFController::class, 'index']);
 Route::resource('/profesores', ProfesoreController::class);

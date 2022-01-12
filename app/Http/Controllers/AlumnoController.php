@@ -19,69 +19,68 @@ class AlumnoController extends Controller
         return view('alumnos.index', compact('alumnos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        //mostrar el formulario de creación
+        return view('alumnos.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => 'required',
+            'apellidos' => 'required',
+            'email' => 'required',
+            'f_nacimiento' => 'required|date',
+            'telefono' => 'required',
+            'dni' => 'required',
+            'curso' => 'required',
+            'clase' => 'required',
+        ]);
+
+        alumno::create($request->all());
+
+        return redirect()->route('alumnos.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Alumno  $alumno
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Alumno $alumno)
+    public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Alumno  $alumno
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Alumno $alumno)
+    public function edit($id)
     {
-        //
+        $alumno = alumno::find($id);
+        return view('alumnos.edit', compact('alumno'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Alumno  $alumno
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Alumno $alumno)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'nombre' => 'required',
+            'apellidos' => 'required',
+        ]);
+
+        $alumno = alumno::find($id);
+        
+        $alumno->update($request->all());
+
+        return redirect()->route('alumnos.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Alumno  $alumno
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Alumno $alumno)
+
+    public function destroy($id)
     {
-        //
+        Alumno::find($id)->delete();
+        return redirect()->route('alumnos.index');
     }
+
+    public function imprimir(){
+
+        $alumnos = Alumno::all();
+        $data = compact('alumnos');
+        $pdf = \PDF::loadView('pdf.alumnos', $data);
+        return $pdf->download('alumnos.pdf');
+    }
+
 }
