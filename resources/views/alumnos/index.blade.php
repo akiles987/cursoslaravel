@@ -1,16 +1,6 @@
 @extends("layouts.app2")
 
 @section("contenido")
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 12px;
-            border-radius: 20px;
-            padding: 50px;
-            margin: 50px;
-        }
-    </style>
-
 <script>
     $(document).ready(function() {
         $(".borrar").click(function(){
@@ -45,21 +35,20 @@
 <body>
     <h1>Alumnos</h1>
 
-
         <a href=" {{url('/imprimiralumno')}}" class="btn btn-primary">Descargar Tabla en PDF</a>
         <a href=" {{url('/alumnos/create')}}" class="btn btn-primary">Nuevo alumno</a>
         <table id="tabla" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>nombre</th>
-                    <th>apellidos</th>
-                    <th>email</th>
-                    <th>f_nacimiento</th>
-                    <th>telefono</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Telefono</th>
                     <th>Clase</th>
-                    <th>curso</th>
-                    <th>dni</th>
+                    <th>Curso</th>
+                    <th>Dni</th>
                     <th>Borrar</th>
                     <th>Editar</th>
                 </tr>

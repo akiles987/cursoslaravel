@@ -37,13 +37,18 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px;
         }
         #principal {
             margin: 40px;
             padding: 40px;
             border: 1px solid #2ECC71;
             border-radius: 15px;
-            background-color: white;
+            background-color: #8C0F61;
             box-shadow: 0 4px 6px -1px  rgba(0,0,0,0.23);
         }
         #menu {
@@ -52,6 +57,15 @@
             border: 4px solid lightskyblue;
             border-radius: 15px;
             background-color: white;
+            background-image: url("https://i.giphy.com/media/fXFMtvW5L6bYI/giphy.gif");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        table {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            background-color: #43E1C2;
         }
     </style>
 @livewireStyles

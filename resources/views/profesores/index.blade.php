@@ -1,16 +1,6 @@
 @extends("layouts.app2")
 
 @section("contenido")
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 12px;
-            border-radius: 20px;
-            padding: 50px;
-            margin: 50px;
-        }
-    </style>
-
 <script>
     $(document).ready(function() {
         $(".borrar").click(function(){

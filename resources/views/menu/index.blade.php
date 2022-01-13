@@ -22,16 +22,16 @@
 </head>
 <body>
     <h1><p class="text-center">Inicio</p></h1>
+    <div class="text-center ">
+    <div class="btn-group shadow-0" role="group" aria-label="Basic example">
+  
+  <a href=" {{url('/profesores')}}" class="btn btn-outline-secondary btn-lg">Listado de profesores</a>
+  <a href=" {{url('/alumnos')}}" class="btn btn-outline-secondary btn-lg">Lista de alumnos</a>
+  <a href=" {{url('/cursos')}}" class="btn btn-outline-secondary btn-lg">Lista de cursos</a>
 
-    <div class="row">
-        
-    <div class="col-sm"><a href=" {{url('/profesores')}}" class="btn btn-info" >Listado de profesores</a> </div>
-    <div class="col-sm"><a href=" {{url('/alumnos')}}" class="btn btn-info">Lista de alumnos</a></div>
-    <div class="col-sm"><a href=" {{url('/cursos')}}" class="btn btn-info">Lista de cursos</a></div>
-
-
+</div>
     <div class="btn-group">
-  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" class="btn btn-primary dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Descarga directa
   </button>
   <div class="dropdown-menu">
@@ -39,5 +39,5 @@
     <a class="dropdown-item" href=" {{url('/imprimiralumno')}}">Descargar PDF Alumno</a>
   </div>
 </div>
-
+</div>
 @endsection
