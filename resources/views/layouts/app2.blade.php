@@ -19,7 +19,6 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key={{env('BING_MAP_API_KEY')}}' defer></script>
 
 
     <script>
@@ -34,6 +33,10 @@
     <style>
         body {
             background-color: #F7FAFC;
+            background-image: url("https://external-preview.redd.it/GOkP8onbuyjGmN9Rc8Que5mw21CdSw6OuXpAKUuE6-4.jpg?auto=webp&s=2bc0e522d1f2fa887333286d557466b2be00fa5e");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
         }
         #principal {
             margin: 40px;

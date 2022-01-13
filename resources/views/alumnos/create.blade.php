@@ -48,7 +48,7 @@
             <label for="clase">Clase</label>
             <input type="text" class="form-control" id="clase" name="clase" placeholder="Clase">
         </div>
-        
+
 
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a href="{{url('/alumnos')}}" class="btn btn-secondary">Volver</a>

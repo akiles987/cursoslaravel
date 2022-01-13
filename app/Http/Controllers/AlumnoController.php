@@ -16,7 +16,9 @@ class AlumnoController extends Controller
     {
         $alumnos = Alumno::all();
 
-        return view('alumnos.index', compact('alumnos'));
+        $curso = Alumno::pluck('curso')->prepend('curso');
+
+        return view('alumnos.index', compact('alumnos'),['curso'=>$curso]);
     }
 
     public function create()
