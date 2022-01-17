@@ -4,14 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumno;
 use Illuminate\Http\Request;
+use App\Rules\Validardni;
 
 class AlumnoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $alumnos = Alumno::all();
@@ -34,8 +31,8 @@ class AlumnoController extends Controller
             'apellidos' => 'required',
             'email' => 'required',
             'f_nacimiento' => 'required|date',
-            'telefono' => 'required',
-            'dni' => 'required',
+            'telefono' => 'required ',
+            'dni' => ['required',new Validardni],
             'curso' => 'required',
             'clase' => 'required',
         ]);
@@ -61,6 +58,7 @@ class AlumnoController extends Controller
         $validated = $request->validate([
             'nombre' => 'required',
             'apellidos' => 'required',
+            'dni' => ['required',new Validardni],
         ]);
 
         $alumno = alumno::find($id);

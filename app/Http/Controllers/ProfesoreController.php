@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profesore;
 use Illuminate\Http\Request;
 use PDF;
+use App\Rules\Validardni;
 
 class ProfesoreController extends Controller
 {
@@ -31,7 +32,7 @@ class ProfesoreController extends Controller
             'email' => 'required',
             'f_nacimiento' => 'required|date',
             'telefono' => 'required',
-            'dni' => 'required',
+            'dni' => ['required',new Validardni],
             'curso' => 'required',
         ]);
 
@@ -56,7 +57,7 @@ class ProfesoreController extends Controller
         $validated = $request->validate([
             'nombre' => 'required',
             'apellidos' => 'required',
-            'dni' => 'required',
+            'dni' => ['required',new Validardni],
         ]);
 
         $profesore = Profesore::find($id);

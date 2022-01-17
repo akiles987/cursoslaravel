@@ -48,7 +48,7 @@
             padding: 40px;
             border: 1px solid #2ECC71;
             border-radius: 15px;
-            background-color: #8C0F61;
+            background-color:#E11EFC;
             box-shadow: 0 4px 6px -1px  rgba(0,0,0,0.23);
         }
         #menu {
@@ -66,6 +66,7 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 12px;
             background-color: #43E1C2;
+            
         }
     </style>
 @livewireStyles

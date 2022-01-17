@@ -62,8 +62,8 @@
                         <td>{{$profesore->telefono}}</td>
                         <td>{{$profesore->dni}}</td>
                         <td>{{$profesore->curso}}</td>
-                        <td><a href="#" class='btn btn-danger borrar'><input  type="image" width="32px" src="https://www.pngrepo.com/png/190063/512/trash.png"></a></td>
-                        <td><a href="{{url('/profesores')}}/{{$profesore->id}}/edit"><img width="32px" src="https://img.icons8.com/cotton/2x/000000/edit.png"></a></td>
+                        <td class="text-center"><a href="#" class='btn btn-danger borrar'><input  type="image" width="32px" src="https://www.pngrepo.com/png/190063/512/trash.png"></a></td>
+                        <td class="text-center"><a href="{{url('/profesores')}}/{{$profesore->id}}/edit"><img width="32px" src="https://img.icons8.com/cotton/2x/000000/edit.png"></a></td>
 
                     </tr>
                 @endforeach
