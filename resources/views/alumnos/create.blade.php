@@ -13,45 +13,56 @@
     @endif
 
 
-    <h3>Insertar Alumnos </h3>
+    <h3>{{__('messages.nuevoalum')}}</h3>
     <form action="{{route('alumnos.store')}}" method="post">
         @csrf
         <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+            <label for="nombre">{{__('messages.nombre')}}</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="{{__('messages.nombre')}}">
         </div>
         <div class="form-group">
-            <label for="apellidos">Apellidos</label>
-            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos">
+            <label for="apellidos">{{__('messages.apellidos')}}</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="{{__('messages.apellidos')}}">
         </div>
         <div class="form-group">
-            <label for="direccion">Email</label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+            <label for="direccion">{{__('messages.email')}}</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="{{__('messages.email')}}">
         </div>
         <div class="form-group">
-            <label for="ciudad">Fecha de nacimiento</label>
-            <input type="text" class="form-control" id="f_nacimiento" name="f_nacimiento" placeholder="FechaNacimiento">
+            <label for="ciudad">{{__('messages.f_nacimiento')}}</label>
+            <input type="text" class="form-control" id="f_nacimiento" name="f_nacimiento" placeholder="{{__('messages.f_nacimiento')}}">
         </div>
         <div class="form-group">
-            <label for="telefono">Teléfono</label>
-            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+            <label for="telefono">{{__('messages.telefono')}}</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="{{__('messages.telefono')}}">
         </div>
         <div class="form-group">
-            <label for="dni">DNI</label>
-            <input type="text" class="form-control" id="dni" name="dni" placeholder="DNI">
+            <label for="dni">{{__('messages.dni')}}</label>
+            <input type="text" class="form-control" id="dni" name="dni" placeholder="{{__('messages.dni')}}">
+        </div>
+
+        <div class="form-group">
+        <label for="curso">{{__('messages.curso')}}: </label>
+            <select name="curso" id="curso">
+            <option value="ESO">ESO</option>
+            <option value="Bachillerato">Bachillerato</option>
+            <option value="FP Grado Medio">Grado Medio</option>
+            <option value="FP Grado Superior">Grado Superior</option>
+            </select>
         </div>
         <div class="form-group">
-            <label for="curso">Curso</label>
-            <input type="text" class="form-control" id="curso" name="curso" placeholder="Curso">
-        </div>
-        <div class="form-group">
-            <label for="clase">Clase</label>
-            <input type="text" class="form-control" id="clase" name="clase" placeholder="Clase">
+        <label for="clase">{{__('messages.clase')}}: </label>
+            <select name="clase" id="clase">
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+            <option value="d">D</option>
+            </select>
         </div>
 
 
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a href="{{url('/alumnos')}}" class="btn btn-secondary">Volver</a>
+        <button type="submit" class="btn btn-primary">{{__('messages.guardar')}}</button>
+        <a href="{{url('/alumnos')}}" class="btn btn-secondary">{{__('messages.volver')}}</a>
     </form>
 
 @endsection

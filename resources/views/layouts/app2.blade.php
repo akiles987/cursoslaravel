@@ -20,6 +20,10 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
 
     <script>
     $(document).ready(function() {
@@ -48,7 +52,7 @@
             padding: 40px;
             border: 1px solid #2ECC71;
             border-radius: 15px;
-            background-color:#E11EFC;
+            background-color: #F388EC;
             box-shadow: 0 4px 6px -1px  rgba(0,0,0,0.23);
         }
         #menu {
@@ -65,7 +69,7 @@
         table {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 12px;
-            background-color: #43E1C2;
+            background-color: #92E8D7;
             
         }
     </style>

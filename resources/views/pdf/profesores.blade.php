@@ -22,14 +22,14 @@
 <table id="tabla" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>nombre</th>
-                    <th>apellidos</th>
-                    <th>email</th>
-                    <th>f_nacimiento</th>
-                    <th>telefono</th>
-                    <th>dni</th>
-                    <th>curso</th>
+                    <th>{{__('messages.id')}}</th>
+                    <th>{{__('messages.nombre')}}</th>
+                    <th>{{__('messages.apellidos')}}</th>
+                    <th>{{__('messages.email')}}</th>
+                    <th>{{__('messages.f_nacimiento')}}</th>
+                    <th>{{__('messages.telefono')}}</th>
+                    <th>{{__('messages.dni')}}</th>
+                    <th>{{__('messages.curso')}}</th>
                 </tr>
             </thead>
             <tbody>

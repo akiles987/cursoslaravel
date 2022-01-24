@@ -11,7 +11,7 @@
     @csrf
 
     <label>
-        Nombre:
+    {{__('messages.nombre')}}:
         <br>
         <input type="text" name="nombre">
     </label>
@@ -22,7 +22,7 @@
     @enderror
 
     <label>
-        Apellido:
+    {{__('messages.apellidos')}}:
         <br>
         <input type="text" name="apellido">
     </label>
@@ -31,7 +31,7 @@
         <p><strong>{{$message}}</strong></p>
     @enderror
     <label>
-        Correo:
+    {{__('messages.email')}}:
         <br>
         <input type="text" name="correo">
     </label>
@@ -40,12 +40,12 @@
         <p><strong>{{$message}}</strong></p>
     @enderror
     <label>
-        Mensaje:
+    {{__('messages.mensaje')}}:
         <br>
         <textarea name="mensaje" cols="30" rows="6"></textarea>
     </label>
     <br>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary">{{__('messages.enviar')}}</button>
 
 </form>
 

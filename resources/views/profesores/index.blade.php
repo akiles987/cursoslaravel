@@ -32,23 +32,23 @@
         </script>
 </head>
 <body>
-    <h1>Profesores</h1>
+    <h1>{{__('messages.profesores')}}</h1>
 
-    <a href=" {{url('/imprimir')}}" class="btn btn-primary">Descargar Tabla en PDF</a>
-    <a href=" {{url('/profesores/create')}}" class="btn btn-primary">Nuevo Profesor</a>
+    <a href=" {{url('/imprimir')}}" class="btn btn-primary">{{__('messages.descargaprof')}}</a>
+    <a href=" {{url('/profesores/create')}}" class="btn btn-primary">{{__('messages.nuevoprof')}}</a>
         <table id="tabla" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>nombre</th>
-                    <th>apellidos</th>
-                    <th>email</th>
-                    <th>f_nacimiento</th>
-                    <th>telefono</th>
-                    <th>dni</th>
-                    <th>curso</th>
-                    <th>Borrar</th>
-                    <th>Editar</th>
+                    <th>{{__('messages.id')}}</th>
+                    <th>{{__('messages.nombre')}}</th>
+                    <th>{{__('messages.apellidos')}}</th>
+                    <th>{{__('messages.email')}}</th>
+                    <th>{{__('messages.f_nacimiento')}}</th>
+                    <th>{{__('messages.telefono')}}</th>
+                    <th>{{__('messages.dni')}}</th>
+                    <th>{{__('messages.curso')}}</th>
+                    <th>{{__('messages.borrar')}}</th>
+                    <th>{{__('messages.editar')}}</th>
                 </tr>
             </thead>
             <tbody>

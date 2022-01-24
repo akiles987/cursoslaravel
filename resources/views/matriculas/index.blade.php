@@ -23,9 +23,9 @@
         <table id="tabla" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Curso</th>
-                    <th>Nombre</th>
+                    <th>{{__('messages.id')}}</th>
+                    <th>{{__('messages.curso')}}</th>
+                    <th>{{__('messages.nombre')}}</th>
                 </tr>
             </thead>
             <tbody>

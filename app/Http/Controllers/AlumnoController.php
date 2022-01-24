@@ -58,7 +58,6 @@ class AlumnoController extends Controller
         $validated = $request->validate([
             'nombre' => 'required',
             'apellidos' => 'required',
-            'dni' => ['required',new Validardni],
         ]);
 
         $alumno = alumno::find($id);

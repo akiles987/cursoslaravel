@@ -21,7 +21,10 @@ Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.st
 Route::get('/imprimir', 'App\Http\Controllers\ProfesoreController@imprimir')->name('pdf.pdf');
 Route::get('/imprimiralumno', 'App\Http\Controllers\AlumnoController@imprimir')->name('pdf.pdf');
 
-
+Route::get('locale/{locale}', function ($locale){
+    session()->put('locale', $locale);
+    return Redirect::back();
+});
 
 Route::get('enviar', [PDFController::class, 'index']);
 Route::resource('/profesores', ProfesoreController::class);

@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <h1>Cursos</h1>
+    <h1>{{__('messages.cursos')}}</h1>
 
 
 
@@ -22,8 +22,8 @@
         <table id="tabla" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>Curso</th>
-                    <th>Nombre</th>
+                    <th>{{__('messages.curso')}}</th>
+                    <th>{{__('messages.nombre')}}</th>
                 </tr>
             </thead>
             <tbody>

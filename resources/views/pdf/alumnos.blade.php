@@ -22,14 +22,13 @@
 <table id="tabla" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>nombre</th>
-                    <th>apellidos</th>
-                    <th>email</th>
-                    <th>f_nacimiento</th>
-                    <th>telefono</th>
-                    <th>Clase</th>
-                    <th>curso</th>
-                    <th>dni</th>
+                    <th>{{__('messages.nombre')}}</th>
+                    <th>{{__('messages.apellidos')}}</th>
+                    <th>{{__('messages.email')}}</th>
+                    <th>{{__('messages.f_nacimiento')}}</th>
+                    <th>{{__('messages.telefono')}}</th>
+                    <th>{{__('messages.curso')}}</th>
+                    <th>{{__('messages.dni')}}</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,7 +39,6 @@
                         <td>{{$alumno->email}}</td>
                         <td>{{$alumno->f_nacimiento}}</td>
                         <td>{{$alumno->telefono}}</td>
-                        <td>{{$alumno->clase}}</td>
                         <td>{{$alumno->curso}}</td>
                         <td>{{$alumno->dni}}</td>
                     </tr>
